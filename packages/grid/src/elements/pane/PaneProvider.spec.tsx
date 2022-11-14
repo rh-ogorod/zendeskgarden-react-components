@@ -305,8 +305,8 @@ describe('PaneProvider', () => {
     );
 
     expect(renderProp.mock.calls[0]).toMatchInlineSnapshot(`
-      Array [
-        Object {
+      [
+        {
           "getColumnValue": [Function],
           "getGridTemplateColumns": [Function],
           "getGridTemplateRows": [Function],
@@ -533,8 +533,8 @@ describe('PaneProvider', () => {
       fireEvent(document, new ExtendedMouseEvent('mousemove', { pageX: 200 }));
       fireEvent.mouseUp(document);
 
-      expect(separator).toHaveAttribute('aria-valuenow', '200');
-      expect(separatorComplement).toHaveAttribute('aria-valuenow', '800');
+      expect(separator).toHaveAttribute('aria-valuenow', '20');
+      expect(separatorComplement).toHaveAttribute('aria-valuenow', '80');
     });
 
     it('moves row based splitter', () => {
@@ -570,8 +570,8 @@ describe('PaneProvider', () => {
       fireEvent(document, new ExtendedMouseEvent('mousemove', { pageY: 50 }));
       fireEvent.mouseUp(document);
 
-      expect(separator).toHaveAttribute('aria-valuenow', '49.999999999999986');
-      expect(separatorComplement).toHaveAttribute('aria-valuenow', '450');
+      expect(separator).toHaveAttribute('aria-valuenow', '9.999999999999998');
+      expect(separatorComplement).toHaveAttribute('aria-valuenow', '90');
     });
     it('moves column start based splitter', () => {
       const { getByTestId } = render(<UncontrolledTestSplitter />);
@@ -606,8 +606,8 @@ describe('PaneProvider', () => {
       fireEvent(document, new ExtendedMouseEvent('mousemove', { pageX: 600 }));
       fireEvent.mouseUp(document);
 
-      expect(separator).toHaveAttribute('aria-valuenow', '400');
-      expect(separatorComplement).toHaveAttribute('aria-valuenow', '600');
+      expect(separator).toHaveAttribute('aria-valuenow', '40');
+      expect(separatorComplement).toHaveAttribute('aria-valuenow', '60');
     });
     it('moves row top based splitter', () => {
       const { getByTestId } = render(<UncontrolledTestSplitter />);
@@ -642,8 +642,8 @@ describe('PaneProvider', () => {
       fireEvent(document, new ExtendedMouseEvent('mousemove', { pageY: 400 }));
       fireEvent.mouseUp(document);
 
-      expect(separator).toHaveAttribute('aria-valuenow', '100');
-      expect(separatorComplement).toHaveAttribute('aria-valuenow', '400');
+      expect(separator).toHaveAttribute('aria-valuenow', '20');
+      expect(separatorComplement).toHaveAttribute('aria-valuenow', '80');
     });
   });
 
@@ -696,13 +696,13 @@ describe('PaneProvider', () => {
       fireEvent.mouseUp(document);
 
       expect(_rowValues).toMatchInlineSnapshot(`
-        Object {
+        {
           "c": 1,
           "d": 1,
         }
       `);
       expect(_columnValues).toMatchInlineSnapshot(`
-        Object {
+        {
           "a": 0.5,
           "b": 1.5,
         }
@@ -757,13 +757,13 @@ describe('PaneProvider', () => {
       fireEvent.mouseUp(document);
 
       expect(_rowValues).toMatchInlineSnapshot(`
-        Object {
+        {
           "c": 0.19999999999999996,
           "d": 1.8,
         }
       `);
       expect(_columnValues).toMatchInlineSnapshot(`
-        Object {
+        {
           "a": 1,
           "b": 1,
         }
@@ -855,13 +855,13 @@ describe('PaneProvider', () => {
       fireEvent.mouseUp(document);
 
       expect(_childRowValues).toMatchInlineSnapshot(`
-        Object {
+        {
           "b": 1.4,
           "nested-a": 0.6,
         }
       `);
       expect(_parentColumnValues).toMatchInlineSnapshot(`
-        Object {
+        {
           "a": 0.8,
           "nested-b": 1.2,
         }
@@ -912,7 +912,7 @@ describe('PaneProvider', () => {
       fireEvent.click(button);
       fireEvent.click(button);
 
-      expect(separator).toHaveAttribute('aria-valuenow', '1000');
+      expect(separator).toHaveAttribute('aria-valuenow', '100');
     });
     it('collapses row based splitter', () => {
       const { getByTestId, getByLabelText } = render(<UncontrolledTestSplitter />);
@@ -957,7 +957,7 @@ describe('PaneProvider', () => {
       fireEvent.click(button);
       fireEvent.click(button);
 
-      expect(separator).toHaveAttribute('aria-valuenow', '500');
+      expect(separator).toHaveAttribute('aria-valuenow', '100');
     });
   });
 });

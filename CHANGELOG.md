@@ -12,6 +12,118 @@ _Note: Gaps between patch versions are faulty, broken or test releases._
 <!-- DO NOT MODIFY BELOW THIS COMMENT -->
 <!-- insert-new-changelog-here -->
 
+## v8.60.0 (2022-11-10)
+
+#### :rocket: New Feature
+* `notifications`
+  * [#1450](https://github.com/zendeskgarden/react-components/pull/1450) feat(notifications): global alert component ([@Francois-Esquire](https://github.com/Francois-Esquire))
+* `grid`
+  * [#1455](https://github.com/zendeskgarden/react-components/pull/1455) feat(grid): add `isFixed` prop along with a11y fixes ([@jzempel](https://github.com/jzempel))
+* `buttons`
+  * [#1448](https://github.com/zendeskgarden/react-components/pull/1448) feat(anchor): add default alternative text to external anchor icon ([@jgorfine-zendesk](https://github.com/jgorfine-zendesk))
+* `chrome`
+  * [#1453](https://github.com/zendeskgarden/react-components/pull/1453) feat(chrome): add aria-current attribute to NavItem component, when it's current ([@jgorfine-zendesk](https://github.com/jgorfine-zendesk))
+
+#### :bug: Bug Fix
+* `accordions`, `forms`
+  * [#1417](https://github.com/zendeskgarden/react-components/pull/1417) fix(accordions, forms): use document for resizing ([@Francois-Esquire](https://github.com/Francois-Esquire))
+* `chrome`
+  * [#1454](https://github.com/zendeskgarden/react-components/pull/1454) fix(chrome): scroll on subnav overflow ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
+#### :seedling: Internal
+* `forms`
+  * [#1456](https://github.com/zendeskgarden/react-components/pull/1456) chore(jest): use swc as transformer ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
+## v8.59.1 (2022-11-04)
+
+#### :bug: Bug Fix
+* `loaders`
+  * [#1451](https://github.com/zendeskgarden/react-components/pull/1451) fix(loaders): changed Dots and Spinner roles from progressbar to img ([@jgorfine-zendesk](https://github.com/jgorfine-zendesk))
+* `tabs`
+  * [#1449](https://github.com/zendeskgarden/react-components/pull/1449) fix(tabs): remove duplicate disabled attribute from StyledTab component ([@jgorfine-zendesk](https://github.com/jgorfine-zendesk))
+
+#### :seedling: Internal
+* [#1452](https://github.com/zendeskgarden/react-components/pull/1452) chore: upgrade storybook ([@jzempel](https://github.com/jzempel))
+
+## v8.59.0 (2022-10-26)
+
+#### :rocket: New Feature
+* `modals`
+  * [#1446](https://github.com/zendeskgarden/react-components/pull/1446) feat(modals): add tag prop to Modal, Drawer, and Tooltip Modal components ([@jgorfine-zendesk](https://github.com/jgorfine-zendesk))
+
+#### :bug: Bug Fix
+* `forms`
+  * [#1447](https://github.com/zendeskgarden/react-components/pull/1447) fix(forms): field renders rtl and ltr ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
+#### :seedling: Internal
+* `buttons`
+  * [#1439](https://github.com/zendeskgarden/react-components/pull/1439) fix(deps): update dependency @zendeskgarden/container-buttongroup to v1 ([@renovate[bot]](https://github.com/apps/renovate))
+* `grid`, `theming`
+  * [#1434](https://github.com/zendeskgarden/react-components/pull/1434) chore(deps): update jest monorepo to v29 (major) ([@renovate[bot]](https://github.com/apps/renovate))
+* `accordions`, `buttons`, `chrome`, `colorpickers`, `datepickers`, `dropdowns`, `forms`, `grid`, `modals`, `notifications`, `pagination`, `tables`, `tabs`, `tooltips`
+  * [#1419](https://github.com/zendeskgarden/react-components/pull/1419) chore(deps): update testing library user events to v14 ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
+## v8.58.0 (2022-10-20)
+
+#### :rocket: New Feature
+* `forms`
+  * [#1431](https://github.com/zendeskgarden/react-components/pull/1431) feat(forms): back `MultiThumbSlider` with new `useSlider` hook ([@jzempel](https://github.com/jzempel))
+* `loaders`
+  * [#1443](https://github.com/zendeskgarden/react-components/pull/1443) feat(progress): add useText helper with default value for ARIA label ([@jgorfine-zendesk](https://github.com/jgorfine-zendesk))
+
+#### :bug: Bug Fix
+* `avatars`
+  * [#1445](https://github.com/zendeskgarden/react-components/pull/1445) fix(avatars): prevent background/foreground prop colors from affecting the status indicator ([@jzempel](https://github.com/jzempel))
+* `grid`
+  * [#1444](https://github.com/zendeskgarden/react-components/pull/1444) fix(grid): properly compose Pane.Splitter events ([@jzempel](https://github.com/jzempel))
+* `forms`
+  * [#1442](https://github.com/zendeskgarden/react-components/pull/1442) fix(forms): remove user-select: none from radio and checkbox labels ([@colinkey](https://github.com/colinkey))
+  * [#1415](https://github.com/zendeskgarden/react-components/pull/1415) fix(forms): add min-width to tile ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
+#### :seedling: Internal
+* Other
+  * [#1418](https://github.com/zendeskgarden/react-components/pull/1418) chore: update PULL_REQUEST_TEMPLATE.md ([@zendesk-rickschmoo](https://github.com/zendesk-rickschmoo))
+  * [#1440](https://github.com/zendeskgarden/react-components/pull/1440) fix: revert renovate configuration ([@jzempel](https://github.com/jzempel))
+
+## v8.57.1 (2022-10-06)
+
+#### :bug: Bug Fix
+* `avatars`
+  * [#1413](https://github.com/zendeskgarden/react-components/pull/1413) fix(avatars): `StatusIndicator` code structure ([@jzempel](https://github.com/jzempel))
+
+## v8.57.0 (2022-09-22)
+
+#### :rocket: New Feature
+* `avatars`
+  * [#1410](https://github.com/zendeskgarden/react-components/pull/1410) feat(avatars): add status indicator component ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
+#### :memo: Documentation
+* [#1411](https://github.com/zendeskgarden/react-components/pull/1411) docs: update contributing documentation and PR template ([@jzempel](https://github.com/jzempel))
+
+#### :seedling: Internal
+* `accordions`
+  * [#1412](https://github.com/zendeskgarden/react-components/pull/1412) demo(accordions): add Figma designs for Timeline component ([@jzempel](https://github.com/jzempel))
+
+## v8.56.0 (2022-09-15)
+
+#### :rocket: New Feature
+* `datepickers`
+  * [#1409](https://github.com/zendeskgarden/react-components/pull/1409) feat(datepickers): add weekStartsOn prop on calendars ([@Axel-Duval](https://github.com/Axel-Duval))
+
+## v8.55.0 (2022-09-06)
+
+#### :rocket: New Feature
+* `avatars`
+  * [#1403](https://github.com/zendeskgarden/react-components/pull/1403) feat(avatars): add status label ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
+#### :bug: Bug Fix
+* `dropdowns`
+  * [#1405](https://github.com/zendeskgarden/react-components/pull/1405) fix(dropdowns): remove nested controls violation from select ([@Francois-Esquire](https://github.com/Francois-Esquire))
+* `avatars`
+  * [#1404](https://github.com/zendeskgarden/react-components/pull/1404) fix(avatars): correct status icon sizing with css bedrock ([@Francois-Esquire](https://github.com/Francois-Esquire))
+* `theming`
+  * [#1402](https://github.com/zendeskgarden/react-components/pull/1402) fix(theming): allow use text to be dynamic when updated ([@Francois-Esquire](https://github.com/Francois-Esquire))
+
 ## v8.54.3 (2022-08-18)
 
 #### :bug: Bug Fix

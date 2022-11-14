@@ -1,6 +1,6 @@
 {
   "name": "@zendeskgarden/react-buttons",
-  "version": "8.54.3",
+  "version": "8.60.0",
   "description": "Components relating to buttons in the Garden Design System",
   "license": "Apache-2.0",
   "author": "Zendesk Garden <garden@zendesk.com>",
@@ -21,7 +21,7 @@
   "sideEffects": false,
   "types": "dist/typings/index.d.ts",
   "dependencies": {
-    "@zendeskgarden/container-buttongroup": "^0.3.8",
+    "@zendeskgarden/container-buttongroup": "^1.0.0",
     "@zendeskgarden/container-keyboardfocus": "^0.4.7",
     "polished": "^4.0.0",
     "prop-types": "^15.5.7"
@@ -33,7 +33,7 @@
     "styled-components": "^4.2.0 || ^5.0.0"
   },
   "devDependencies": {
-    "@zendeskgarden/react-theming": "^8.54.3",
+    "@zendeskgarden/react-theming": "^8.60.0",
     "@zendeskgarden/svg-icons": "6.33.0"
   },
   "keywords": [

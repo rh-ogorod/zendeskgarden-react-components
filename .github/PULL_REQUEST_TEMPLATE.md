@@ -19,11 +19,13 @@
 
 ## Checklist
 
-- [ ] :ok_hand: design updates are Garden Designer approved (add the
-      designer as a reviewer)
+<!-- check the items below that will be completed prior to merge.
+     strikethrough any item text that does not apply to this PR. -->
+
+- [ ] :ok_hand: design updates will be Garden Designer approved (add the designer as a reviewer)
 - [ ] :globe_with_meridians: demo is up-to-date (`yarn start`)
 - [ ] :arrow_left: renders as expected with reversed (RTL) direction
 - [ ] :metal: renders as expected with Bedrock CSS (`?bedrock`)
-- [ ] :wheelchair: analyzed via [axe](https://www.deque.com/axe/) and evaluated using VoiceOver
-- [ ] :guardsman: includes new unit tests
-- [ ] :memo: tested in Chrome, Firefox, Safari, Edge, and IE11
+- [ ] :guardsman: includes new unit tests. Maintain [existing coverage](https://coveralls.io/github/zendeskgarden/react-components?branch=main) (always >= 96%)
+- [ ] :wheelchair: tested for [WCAG 2.1 AA](https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&levels=aaa) accessibility compliance
+- [ ] :memo: tested in Chrome, Firefox, Safari, and Edge

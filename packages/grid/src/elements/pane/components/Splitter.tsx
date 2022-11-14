@@ -41,7 +41,22 @@ const orientationToDimension: Record<string, 'columns' | 'rows'> = {
 };
 
 const SplitterComponent = forwardRef<HTMLDivElement, ISplitterProps>(
-  ({ providerId, layoutKey, min, max, orientation, ...props }, ref) => {
+  (
+    {
+      providerId,
+      layoutKey,
+      min,
+      max,
+      orientation,
+      isFixed,
+      onMouseDown,
+      onTouchStart,
+      onKeyDown,
+      onClick,
+      ...props
+    },
+    ref
+  ) => {
     const paneProviderContext = usePaneProviderContextData(providerId);
     const paneContext = usePaneContext();
     const themeContext = useContext(ThemeContext);
@@ -70,6 +85,7 @@ const SplitterComponent = forwardRef<HTMLDivElement, ISplitterProps>(
       min: min * pixelsPerFr,
       max: max * pixelsPerFr,
       rtl: themeContext.rtl,
+      isFixed,
       environment,
       onChange: valueNow => {
         if (isRow) {
@@ -105,7 +121,12 @@ const SplitterComponent = forwardRef<HTMLDivElement, ISplitterProps>(
 
     const separatorProps = getSeparatorProps({
       'aria-controls': paneContext.id,
-      'aria-label': ariaLabel
+      'aria-label': ariaLabel,
+      /* allow following handlers to be composed */
+      onMouseDown,
+      onTouchStart,
+      onKeyDown,
+      onClick
     }) as HTMLAttributes<HTMLDivElement>;
 
     const size = isRow ? separatorRef.current?.clientWidth : separatorRef.current?.clientHeight;
@@ -127,6 +148,7 @@ const SplitterComponent = forwardRef<HTMLDivElement, ISplitterProps>(
       >
         <StyledPaneSplitter
           isHovered={isHovered}
+          isFixed={isFixed}
           orientation={orientation}
           {...separatorProps}
           {...props}
@@ -144,7 +166,8 @@ SplitterComponent.propTypes = {
   layoutKey: PropTypes.string.isRequired,
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
-  orientation: PropTypes.oneOf(ORIENTATION)
+  orientation: PropTypes.oneOf(ORIENTATION),
+  isFixed: PropTypes.bool
 };
 
 SplitterComponent.defaultProps = {
