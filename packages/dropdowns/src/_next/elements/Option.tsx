@@ -18,9 +18,9 @@ export const Option = React.forwardRef<HTMLLIElement, IOptionProps>(
     const { getOptionProps, values, activeValue } = useListboxContext();
 
     if (isDisabled) {
-      return <StyledOption isDisabled {...props} aria-disabled ref={ref} />;
+      return <StyledOption isDisabled role="option" {...props} aria-disabled ref={ref} />;
     } else if (value === undefined || value === null) {
-      return <StyledOption {...props} ref={ref} />;
+      return <StyledOption role="option" {...props} ref={ref} />;
     }
 
     return (

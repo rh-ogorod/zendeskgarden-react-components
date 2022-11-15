@@ -67,11 +67,10 @@ export const Combobox = forwardRef<HTMLDivElement, IComboboxProps>(
     const values = Object.keys(items);
     const [openChangeType, setOpenChangeType] = useState<string>();
 
-    const { getSelectedItemProps, getDropdownProps, addSelectedItem, removeSelectedItem } =
-      useMultipleSelection();
+    // const { getSelectedItemProps, getDropdownProps, addSelectedItem, removeSelectedItem } =
+    //   useMultipleSelection();
 
     const {
-      getComboboxProps,
       getToggleButtonProps,
       getInputProps,
       getMenuProps,
@@ -109,11 +108,9 @@ export const Combobox = forwardRef<HTMLDivElement, IComboboxProps>(
       [isAutocomplete, getToggleButtonProps, openChangeType]
     );
 
-    const { ref: downshiftComboboxRef, ...comboboxProps } = getComboboxProps();
     const { ref: downshiftInputRef, ...inputProps } = getInputProps({
       'aria-autocomplete': isAutocomplete ? 'list' : 'none',
-      onClick: event => isAutocomplete && isOpen && event.stopPropagation(), // prevent menu close
-      ...comboboxProps // https://github.com/downshift-js/downshift/issues/1239
+      onClick: event => isAutocomplete && isOpen && event.stopPropagation() // prevent menu close
     });
 
     const {
@@ -159,7 +156,7 @@ export const Combobox = forwardRef<HTMLDivElement, IComboboxProps>(
       <>
         <MediaInput
           {...inputProps}
-          ref={mergeRefs([downshiftInputRef, downshiftComboboxRef])}
+          ref={downshiftInputRef}
           wrapperRef={mergeRefs([floatingInputRef, ref])}
           wrapperProps={{
             onBlur: composeEventHandlers(handleBlur, onBlur),
