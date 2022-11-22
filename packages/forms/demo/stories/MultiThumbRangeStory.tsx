@@ -16,10 +16,8 @@ interface IArgs extends IMultiThumbRangeProps, IFieldArgs {
 }
 
 export const MultiThumbRangeStory: Story<IArgs> = ({
-  // legend,
-  // isLegendHidden,
-  label,
-  isLabelHidden,
+  legend,
+  isLegendHidden,
   hasHint,
   hint,
   hasMessage,
@@ -28,7 +26,7 @@ export const MultiThumbRangeStory: Story<IArgs> = ({
   ...args
 }) => (
   <Fieldset {...args}>
-    <Fieldset.Legend hidden={isLabelHidden}>{label}</Fieldset.Legend>
+    <Fieldset.Legend hidden={isLegendHidden}>{legend}</Fieldset.Legend>
     {hasHint && <Hint>{hint}</Hint>}
     <FieldStory
       // label={label}

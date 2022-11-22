@@ -1,13 +1,13 @@
 import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
 import { useArgs } from '@storybook/client-api';
-import { MultiThumbRange, Field, Label, Hint, Message } from '@zendeskgarden/react-forms';
+import { MultiThumbRange, Fieldset, Field } from '@zendeskgarden/react-forms';
 import { MultiThumbRangeStory } from './stories/MultiThumbRangeStory';
-import { commonArgs, commonArgTypes } from './stories/common';
+import { hintArgs, hintArgTypes, messageArgs, messageArgTypes } from './stories/common';
 
 <Meta
   title="Packages/Forms/MultiThumbRange"
   component={MultiThumbRange}
-  subcomponents={{ Field, Label, Hint, Message }}
+  subcomponents={{ 'Fieldset.Legend': Fieldset.Legend, Field }}
 />
 
 # API
@@ -20,10 +20,14 @@ import { commonArgs, commonArgTypes } from './stories/common';
   <Story
     name="MultiThumbRange"
     args={{
-      ...commonArgs
+      legend: 'Legend',
+      ...hintArgs,
+      ...messageArgs
     }}
     argTypes={{
-      ...commonArgTypes
+      legend: { name: 'children', table: { category: 'Legend' } },
+      ...hintArgTypes,
+      ...messageArgTypes
     }}
     parameters={{
       design: {
