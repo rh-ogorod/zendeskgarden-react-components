@@ -7,14 +7,18 @@
 
 import React from 'react';
 import { Story } from '@storybook/react';
-import { IMultiThumbRangeProps, MultiThumbRange } from '@zendeskgarden/react-forms';
+import { IMultiThumbRangeProps, MultiThumbRange, Fieldset, Hint } from '@zendeskgarden/react-forms';
 import { FieldStory, IFieldArgs } from './FieldStory';
 
-interface IArgs extends IMultiThumbRangeProps, IFieldArgs {}
+interface IArgs extends IMultiThumbRangeProps, IFieldArgs {
+  legend: string;
+  isLegendHidden: boolean;
+}
 
 export const MultiThumbRangeStory: Story<IArgs> = ({
+  // legend,
+  // isLegendHidden,
   label,
-  isLabelRegular,
   isLabelHidden,
   hasHint,
   hint,
@@ -23,17 +27,22 @@ export const MultiThumbRangeStory: Story<IArgs> = ({
   validationLabel,
   ...args
 }) => (
-  <FieldStory
-    label={label}
-    isLabelRegular={isLabelRegular}
-    isLabelHidden={isLabelHidden}
-    hasHint={hasHint}
-    hint={hint}
-    hasMessage={hasMessage}
-    message={message}
-    validation={args.validation}
-    validationLabel={validationLabel}
-  >
-    <MultiThumbRange {...args} />
-  </FieldStory>
+  <Fieldset {...args}>
+    <Fieldset.Legend hidden={isLabelHidden}>{label}</Fieldset.Legend>
+    {hasHint && <Hint>{hint}</Hint>}
+    <FieldStory
+      // label={label}
+      // isLabelRegular={isLabelRegular}
+      // isLabelHidden={isLabelHidden}
+      hasLabel={false}
+      hasHint={false}
+      hint={hint}
+      hasMessage={hasMessage}
+      message={message}
+      validation={args.validation}
+      validationLabel={validationLabel}
+    >
+      <MultiThumbRange {...args} />
+    </FieldStory>
+  </Fieldset>
 );
