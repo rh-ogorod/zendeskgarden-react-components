@@ -163,6 +163,10 @@ export interface IMultiThumbRangeProps extends Omit<HTMLAttributes<HTMLDivElemen
   minValue?: number;
   /** Sets the maximum thumb value */
   maxValue?: number;
+  /** Allows a customized/translated text label to be passed to the minimum thumb, making it accessible to assistive technology */
+  minLabel?: string;
+  /** Allows a customized/translated text label to be passed to the maximum thumb, making it accessible to assistive technology */
+  maxLabel?: string;
   /** Defines the stepping interval */
   step?: number;
   /** Defines the jumping interval for keyboard page up/down navigation. Defaults to `step`. */

@@ -216,7 +216,7 @@ describe('MultiThumbRange', () => {
       expect(thumb).toHaveAttribute('aria-valuemin', '0');
       expect(thumb).toHaveAttribute('aria-valuemax', '75');
       expect(thumb).toHaveAttribute('aria-valuenow', '15');
-      expect(thumb).toHaveAttribute('aria-label', '15');
+      expect(thumb).toHaveAttribute('aria-label', 'Minimum value');
     });
 
     it('removes thumb from tab order when disabled', () => {
@@ -441,7 +441,7 @@ describe('MultiThumbRange', () => {
       expect(thumb).toHaveAttribute('aria-valuemin', '15');
       expect(thumb).toHaveAttribute('aria-valuemax', '100');
       expect(thumb).toHaveAttribute('aria-valuenow', '75');
-      expect(thumb).toHaveAttribute('aria-label', '75');
+      expect(thumb).toHaveAttribute('aria-label', 'Maximum value');
     });
 
     it('removes thumb from tab order when disabled', () => {

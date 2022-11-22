@@ -9,7 +9,7 @@ import React, { useEffect, useRef, useContext, forwardRef, HTMLAttributes } from
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
 import { useSlider } from '@zendeskgarden/container-slider';
-import { useDocument } from '@zendeskgarden/react-theming';
+import { useDocument, useText } from '@zendeskgarden/react-theming';
 import { IMultiThumbRangeProps } from '../types';
 import {
   StyledSlider,
@@ -32,6 +32,8 @@ export const MultiThumbRange = forwardRef<HTMLDivElement, IMultiThumbRangeProps>
       max = MAX,
       minValue,
       maxValue,
+      minLabel,
+      maxLabel,
       disabled,
       step,
       jump,
@@ -82,6 +84,9 @@ export const MultiThumbRange = forwardRef<HTMLDivElement, IMultiThumbRangeProps>
     const maxPosition = ((updatedMaxValue - min) / (max - min)) * trackRect.width;
     const sliderBackgroundSize = Math.abs(maxPosition) - Math.abs(minPosition);
 
+    const minAriaLabel = useText(MultiThumbRange, { minLabel }, 'minLabel', 'Minimum value');
+    const maxAriaLabel = useText(MultiThumbRange, { maxLabel }, 'maxLabel', 'Maximum value');
+
     return (
       <StyledSlider ref={ref} data-test-id="slider" onMouseDown={onSliderMouseDown} {...props}>
         <StyledSliderTrack
@@ -98,7 +103,7 @@ export const MultiThumbRange = forwardRef<HTMLDivElement, IMultiThumbRangeProps>
             <StyledSliderThumb
               data-test-id="thumb"
               {...(getMinThumbProps({
-                'aria-label': updatedMinValue as unknown as string
+                'aria-label': minAriaLabel
               }) as HTMLAttributes<HTMLDivElement>)}
               isDisabled={disabled}
               position={minPosition}
@@ -109,7 +114,7 @@ export const MultiThumbRange = forwardRef<HTMLDivElement, IMultiThumbRangeProps>
             <StyledSliderThumb
               data-test-id="thumb"
               {...(getMaxThumbProps({
-                'aria-label': updatedMaxValue as unknown as string
+                'aria-label': maxAriaLabel
               }) as HTMLAttributes<HTMLDivElement>)}
               isDisabled={disabled}
               position={maxPosition}
